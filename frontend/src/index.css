@@ -1,0 +1,290 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'react-toastify/dist/ReactToastify.css';
+
+:root {
+  --buslink-orange: #FF5A00;
+  --buslink-orange-hover: #E04F00;
+  --buslink-orange-light: #FFF0E6;
+  --buslink-green: #00C853;
+  --buslink-green-light: #E6F9ED;
+  --buslink-dark: #24272B;
+  --buslink-slate: #2D3748;
+  --buslink-gray-bg: #F8FAFC;
+  --buslink-border: #E2E8F0;
+  --buslink-card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--buslink-gray-bg);
+  color: var(--buslink-dark);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .brand-font {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* FlixBus Inspired Primary Buttons */
+.btn-buslink-primary {
+  background-color: var(--buslink-orange);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(255, 90, 0, 0.3);
+}
+
+.btn-buslink-primary:hover, .btn-buslink-primary:focus {
+  background-color: var(--buslink-orange-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 90, 0, 0.45);
+}
+
+.btn-buslink-outline {
+  background-color: transparent;
+  color: var(--buslink-orange);
+  border: 2px solid var(--buslink-orange);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 18px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-buslink-outline:hover {
+  background-color: var(--buslink-orange);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 90, 0, 0.3);
+}
+
+/* Navbar Custom Theme - Hex: #24272B with High Z-Index */
+.navbar-custom {
+  background-color: #24272B !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1050 !important; /* Guarantees navbar is always on top of page content */
+}
+
+.nav-link-custom {
+  color: #CBD5E1 !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 14px !important;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none;
+}
+
+.nav-link-custom:hover {
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link-custom.active {
+  color: #FFFFFF !important;
+  background-color: var(--buslink-orange);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(255, 90, 0, 0.4);
+}
+
+.nav-link-custom:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(255, 90, 0, 0.4) !important;
+}
+
+/* Dropdown Custom Dark Theme */
+.dropdown-menu-custom {
+  background-color: #2B2E33 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 12px !important;
+  padding: 6px !important;
+  z-index: 1060 !important;
+}
+
+.dropdown-item-custom {
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 600;
+  color: #E2E8F0 !important;
+  transition: all 0.15s ease;
+}
+
+.dropdown-item-custom:hover {
+  background-color: var(--buslink-orange);
+  color: #FFFFFF !important;
+}
+
+/* Role Switcher Pill Bar */
+.role-switcher-bar {
+  background-color: var(--buslink-dark);
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+.role-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.role-pill:hover {
+  color: #ffffff;
+}
+
+.role-pill.active {
+  background-color: var(--buslink-orange);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Card Enhancements */
+.buslink-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid var(--buslink-border);
+  box-shadow: var(--buslink-card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buslink-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Seat Selection Grid Styles */
+.seat-grid-container {
+  background-color: #f1f5f9;
+  border: 2px dashed #cbd5e1;
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+}
+
+.seat-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  border: 2px solid #cbd5e1;
+  background-color: #ffffff;
+}
+
+.seat-box.available:hover {
+  border-color: var(--buslink-orange);
+  color: var(--buslink-orange);
+  transform: scale(1.05);
+}
+
+.seat-box.selected {
+  background-color: var(--buslink-orange);
+  border-color: var(--buslink-orange);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(255, 90, 0, 0.3);
+}
+
+.seat-box.booked {
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.seat-box.ladies {
+  background-color: #fce7f3;
+  border-color: #f472b6;
+  color: #db2777;
+}
+
+/* Sleeper Berth Box */
+.sleeper-berth {
+  width: 90px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid #cbd5e1;
+  background-color: #ffffff;
+}
+
+.sleeper-berth.available:hover {
+  border-color: var(--buslink-orange);
+  color: var(--buslink-orange);
+  transform: scale(1.03);
+}
+
+.sleeper-berth.selected {
+  background-color: var(--buslink-orange);
+  border-color: var(--buslink-orange);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(255, 90, 0, 0.3);
+}
+
+.sleeper-berth.booked {
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Hero Section Bright Sunny Daylight Background Image */
+.hero-banner {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.45) 100%), url('/images/hero_bus.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 490px;
+  padding-top: 110px;
+  padding-bottom: 90px;
+}
+
+.hero-search-wrapper {
+  margin-top: 15px;
+  margin-bottom: -90px;
+  position: relative;
+  z-index: 10;
+}
